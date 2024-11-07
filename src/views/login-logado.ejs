@@ -1,0 +1,15 @@
+   <%- include ('includes/head')%>
+   <%- include ('includes/nav')%>
+   <div class="container">
+    <div>
+        <div class="col-log-2"></div>
+
+        <div class="col-log-8 my-5">
+            <h1 class="text-center">Olá <%=user.email%></h1>
+            <p class="lead text-center">Você já está logado, saia para cadastrar uma conta.</p>
+            <%- include ('includes/messages');%>
+            </div>
+        <div class="col-log-2"></div>
+    </div>
+   </div>
+   <%- include ('includes/footer')%>
