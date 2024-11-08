@@ -1,4 +1,4 @@
-{
+ {
     "dados_lixo": [
       {"id": 1, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1200, "impacto_ambiental": "alto", "recycled_percentage": 25},
       {"id": 2, "tipo_residuo": "papel", "quantidade_gerada_kg": 800, "impacto_ambiental": "moderado", "recycled_percentage": 50},
