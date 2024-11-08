@@ -5,11 +5,11 @@ import Chart from 'chart.js/auto';
 const ctx = document.getElementById('myChart');
   
     new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
         datasets: [{
-          label: '# of Votes',
+          label: 'T de Lixo Gerado',
           data: [12, 19, 3, 5, 2, 3],
           borderWidth: 1
         }]
@@ -19,6 +19,8 @@ const ctx = document.getElementById('myChart');
           y: {
             beginAtZero: true
           }
-        }
+        },
+        borderColor: 'rgba(255,0,255,1)',
+        fill: true,
       }
     });
