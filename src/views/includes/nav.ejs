@@ -11,11 +11,14 @@
         </li>
         <% if(user) { %>
           <li class="nav-item">
-            <a class="nav-link" href="/login/logout">Sair</a>
+            <a class="nav-link active" href="/login/logout">Sair</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/api">Acessar API</a>
           </li>
           <% } else {%>
             <li class="nav-item">
-              <a class="nav-link" href="/login">Entrar</a>
+              <a class="nav-link active" href="/login">Entrar</a>
             </li>
          <% } %>
       </ul>
