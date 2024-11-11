@@ -15,5 +15,6 @@ route.post('/login/login', loginController.login)
 route.get('/login/logout', loginController.logout)
 
 route.get('/api', apiController.index)
+route.get('/views/dados_lixo.json', apiController.paginaDoJson)
 
 module.exports = route;
