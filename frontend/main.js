@@ -20,12 +20,12 @@ async function fetchData() { // pra pegar os dados da api do json
 // depois disso usamos as variaveis das charts e a partir dos seus objetos de configuracao mudamos seus valores. 
 fetchData().then(datapoints => {
   const quantidade = datapoints.dados_lixo.map(function(index){
-    return index.quantidade_gerada_kg;
+    return index.toneladas;
   })
-  const impacto = datapoints.dados_lixo.map(function(index){
-    return index.impacto_ambiental;
+  const ano = datapoints.dados_lixo.map(function(index){
+    return index.ano;
   })
-  chartzuda2.config.data.labels = impacto;
+  chartzuda2.config.data.labels = ano;
   chartzuda2.config.data.datasets[0].data = quantidade;
   chartzuda2.update();
 })
@@ -39,16 +39,27 @@ const chartzuda2 = new Chart(ctx2, {
     datasets: [{
       label: 'T de Lixo Gerado',
       data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
     }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        min: 100000,
+        title:{
+          display:true,
+          text: 'Toneladas',
+        },
+        beginAtZero: false
+      },
+      x:{ title: {
+        display: true,
+        text: 'Ano'
+      }
+
       }
     },
-    borderColor: 'rgba(255,0,255,1)',
+    borderColor: 'rgba(130,46,255,1)',
+    borderWidth: 2,
     fill: true,
   }
 });
@@ -60,7 +71,6 @@ const chartzuda1 = new Chart(ctx, {
     datasets: [{
       label: 'T de Lixo Gerado',
       data: [12, 19, 13, 5, 2, 3],
-      borderWidth: 1
     }]
   },
   options: {
@@ -69,8 +79,9 @@ const chartzuda1 = new Chart(ctx, {
         beginAtZero: true
       }
     },
-    borderColor: 'rgba(255,0,255,1)',
+    borderColor: 'rgba(130,46,255,1)',
     fill: true,
+    borderWidth: 1.3
   }
 });
 
