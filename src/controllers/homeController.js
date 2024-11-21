@@ -1,3 +1,5 @@
+const DadosLixo = require('../models/ApiModel');
 exports.index = async(req, res) => {
-  res.render('index');
+  const { maior, ano, pib } = await DadosLixo.getMaiorValor();
+  res.render('index', { maior, ano, pib });
   return;}

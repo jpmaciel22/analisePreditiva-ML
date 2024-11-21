@@ -2,7 +2,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import './assets/css/style.css';
 import Chart from 'chart.js/auto';
-const DadosLixo = require('../src/models/ApiModel')
 const ctx = document.getElementById('myChart');
 const ctx2 = document.getElementById('myChart2');
 
@@ -25,11 +24,30 @@ fetchData().then(datapoints => {
   const ano = datapoints.dados_lixo.map(function(index){
     return index.ano;
   })
+  const populacao = datapoints.dados_lixo.map(function(index){
+    return index.populacao;
+  })
+  const pib = datapoints.dados_lixo.map(function(index){
+    return index.pib;
+  })
+  const turistas = datapoints.dados_lixo.map(function(index){
+    return index.turistas;
+  })
   chartzuda2.config.data.labels = ano;
   chartzuda2.config.data.datasets[0].data = quantidade;
+  chartzuda1.config.data.labels = turistas;
+  chartzuda1.config.data.datasets[0].data = pib;
   chartzuda2.update();
+  chartzuda1.update();
+
+  for(i in quantidade){
+    maior = 0;
+    if(i>maior) maior = i;
+  }
+  return maior;
 })
 }
+
 
 
 const chartzuda2 = new Chart(ctx2, {
@@ -69,21 +87,29 @@ const chartzuda1 = new Chart(ctx, {
   data: {
     labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
     datasets: [{
-      label: 'T de Lixo Gerado',
+      label: 'PIB',
       data: [12, 19, 13, 5, 2, 3],
     }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+        title:{
+          display:true,
+          text: 'PIB'},
+      },
+      x:{ 
+        title: {
+        display: true,
+        text: 'Turistas ( Em milhões )'
       }
     },
+  },
     borderColor: 'rgba(130,46,255,1)',
     fill: true,
     borderWidth: 1.3
-  }
-});
+}});
 
 function rodarFetchAutomatico(){
   // const botao = document.querySelector('.fetchzudo');

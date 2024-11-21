@@ -7,28 +7,36 @@
   </div>
   <div class="row align-items-center ">
       <div class="col-lg mb-3 titulosDasCharts">
-          <h2>Volume de lixo até junho de 2024</h2>
+      <h2 class="h2doChart1">PIB por milhões de turistas</h2>
           <div>
             <canvas id="myChart"></canvas>
           </div>
       </div>
 
       <div class="col-5">
-        <h1 class="lead">Percebe-se que fevereiro houve uma alta na geração de resíduos na nossa metrópole soteropolitana, reduzindo ao longo da chegada do meio do ano.</h1>
+        <h1 class="lead">Percebe-se que ao longo dos anos houve um grande aumento no PIB dos cidadãos de Salvador, há uma relação com turistas porém há certos anos onde há mais turistas e o PIB ainda está menor.</h1>
       </div>
-          <!-- <div class="w-100"> faz pular de linha a partir daqui  -->
-            <br>
-          </div>
-            <div class="col-lg row align-items-center justify-content-end">
-              <div>
-                <h2 class="h2doChart2 ">Mesmo gráfico porém diferente</h2>
-              </div>
-              <div class="col-4 row align-items-center justify-content-end">
-                <h1 class="lead">Percebe-se que fevereiro houve uma alta na geração de resíduos na nossa metrópole soteropolitana, reduzindo ao longo da chegada do meio do ano.</h1>
-              </div>
-              <div class="col-lg">
-                <canvas id="myChart2"></canvas> 
-              </div>
+      <!-- <div class="w-100"> faz pular de linha a partir daqui  -->
+        <br>
+      </div>
+      <hr class="solid">
+      <div class="col-lg row align-items-center justify-content-end">
+        <div>
+          <h2 class="h2doChart2 ">Geração de toneladas de lixo</h2>
+        </div>
+        <div class="col-4 row align-items-center justify-content-end">
+          <h1 class="lead">O ano com a maior geração de lixo foi o de 2020, provavelmente causado pelo auge da pandemia na capital soteropolitana. Também é possível perceber que a cada 4 anos há uma pequena diminuição na geração de lixo, apenas para começar novamente.</h1>
+        </div>
+        <div class="col-lg">
+          <canvas id="myChart2"></canvas> 
+        </div>
+      </div>
+            <div class="box-informacao">
+              <hr class="solid">
+              <h2>Informações analisadas:</h2>
+              <h2 class="lead">Maior valor: <%= maior %>t , Ano: <%= ano %></h2>
+              <h2 class="lead">PIB per capita do maior ano: R$<%= pib %></h2>
+              <br><br><br>
             </div>
        </div>
      </div>

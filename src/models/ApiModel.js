@@ -5,88 +5,23 @@ const mongoose = require('mongoose');
 //   });
 //   const ApiModel = mongoose.model('Api', ApiSchema);
 
-  const DadosLixo = {
-    "dados_lixo": [
-      {"id": 1, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1200, "impacto_ambiental": "alto", "recycled_percentage": 25},
-      {"id": 2, "tipo_residuo": "papel", "quantidade_gerada_kg": 800, "impacto_ambiental": "moderado", "recycled_percentage": 50},
-      {"id": 3, "tipo_residuo": "vidro", "quantidade_gerada_kg": 500, "impacto_ambiental": "baixo", "recycled_percentage": 70},
-      {"id": 4, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 300, "impacto_ambiental": "baixo", "recycled_percentage": 90},
-      {"id": 5, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1500, "impacto_ambiental": "alto", "recycled_percentage": 10},
-      {"id": 6, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 250, "impacto_ambiental": "alto", "recycled_percentage": 30},
-      {"id": 7, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 600, "impacto_ambiental": "moderado", "recycled_percentage": 20},
-      {"id": 8, "tipo_residuo": "madeira", "quantidade_gerada_kg": 400, "impacto_ambiental": "moderado", "recycled_percentage": 60},
-      {"id": 9, "tipo_residuo": "concreto", "quantidade_gerada_kg": 2000, "impacto_ambiental": "baixo", "recycled_percentage": 80},
-      {"id": 10, "tipo_residuo": "papelão", "quantidade_gerada_kg": 900, "impacto_ambiental": "moderado", "recycled_percentage": 75},
-      {"id": 11, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1500, "impacto_ambiental": "alto", "recycled_percentage": 22},
-      {"id": 12, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1100, "impacto_ambiental": "alto", "recycled_percentage": 12},
-      {"id": 13, "tipo_residuo": "papel", "quantidade_gerada_kg": 350, "impacto_ambiental": "moderado", "recycled_percentage": 55},
-      {"id": 14, "tipo_residuo": "plástico", "quantidade_gerada_kg": 650, "impacto_ambiental": "alto", "recycled_percentage": 30},
-      {"id": 15, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 180, "impacto_ambiental": "baixo", "recycled_percentage": 95},
-      {"id": 16, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 2100, "impacto_ambiental": "alto", "recycled_percentage": 8},
-      {"id": 17, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 450, "impacto_ambiental": "alto", "recycled_percentage": 20},
-      {"id": 18, "tipo_residuo": "vidro", "quantidade_gerada_kg": 300, "impacto_ambiental": "baixo", "recycled_percentage": 75},
-      {"id": 19, "tipo_residuo": "papel", "quantidade_gerada_kg": 450, "impacto_ambiental": "moderado", "recycled_percentage": 60},
-      {"id": 20, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1000, "impacto_ambiental": "alto", "recycled_percentage": 15},
-      {"id": 21, "tipo_residuo": "concreto", "quantidade_gerada_kg": 1800, "impacto_ambiental": "baixo", "recycled_percentage": 85},
-      {"id": 22, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 750, "impacto_ambiental": "moderado", "recycled_percentage": 25},
-      {"id": 23, "tipo_residuo": "madeira", "quantidade_gerada_kg": 500, "impacto_ambiental": "moderado", "recycled_percentage": 65},
-      {"id": 24, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 200, "impacto_ambiental": "baixo", "recycled_percentage": 92},
-      {"id": 25, "tipo_residuo": "papelão", "quantidade_gerada_kg": 650, "impacto_ambiental": "moderado", "recycled_percentage": 70},
-      {"id": 26, "tipo_residuo": "plástico", "quantidade_gerada_kg": 800, "impacto_ambiental": "alto", "recycled_percentage": 18},
-      {"id": 27, "tipo_residuo": "vidro", "quantidade_gerada_kg": 220, "impacto_ambiental": "baixo", "recycled_percentage": 80},
-      {"id": 28, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 520, "impacto_ambiental": "alto", "recycled_percentage": 28},
-      {"id": 29, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1300, "impacto_ambiental": "alto", "recycled_percentage": 10},
-      {"id": 30, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 450, "impacto_ambiental": "moderado", "recycled_percentage": 22},
-      {"id": 31, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1100, "impacto_ambiental": "alto", "recycled_percentage": 26},
-      {"id": 32, "tipo_residuo": "concreto", "quantidade_gerada_kg": 2200, "impacto_ambiental": "baixo", "recycled_percentage": 78},
-      {"id": 33, "tipo_residuo": "papel", "quantidade_gerada_kg": 500, "impacto_ambiental": "moderado", "recycled_percentage": 55},
-      {"id": 34, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1700, "impacto_ambiental": "alto", "recycled_percentage": 12},
-      {"id": 35, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 150, "impacto_ambiental": "baixo", "recycled_percentage": 93},
-      {"id": 36, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 300, "impacto_ambiental": "alto", "recycled_percentage": 30},
-      {"id": 37, "tipo_residuo": "vidro", "quantidade_gerada_kg": 100, "impacto_ambiental": "baixo", "recycled_percentage": 85},
-      {"id": 38, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 650, "impacto_ambiental": "moderado", "recycled_percentage": 30},
-      {"id": 39, "tipo_residuo": "concreto", "quantidade_gerada_kg": 1600, "impacto_ambiental": "baixo", "recycled_percentage": 82},
-      {"id": 40, "tipo_residuo": "madeira", "quantidade_gerada_kg": 200, "impacto_ambiental": "moderado", "recycled_percentage": 60},
-      {"id": 41, "tipo_residuo": "plástico", "quantidade_gerada_kg": 950, "impacto_ambiental": "alto", "recycled_percentage": 19},
-      {"id": 42, "tipo_residuo": "papelão", "quantidade_gerada_kg": 710, "impacto_ambiental": "moderado", "recycled_percentage": 72},
-      {"id": 43, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 250, "impacto_ambiental": "baixo", "recycled_percentage": 90},
-      {"id": 44, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 400, "impacto_ambiental": "alto", "recycled_percentage": 25},
-      {"id": 45, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 950, "impacto_ambiental": "alto", "recycled_percentage": 5},
-      {"id": 46, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1200, "impacto_ambiental": "alto", "recycled_percentage": 24},
-      {"id": 47, "tipo_residuo": "papel", "quantidade_gerada_kg": 800, "impacto_ambiental": "moderado", "recycled_percentage": 50},
-      {"id": 48, "tipo_residuo": "madeira", "quantidade_gerada_kg": 900, "impacto_ambiental": "moderado", "recycled_percentage": 60},
-      {"id": 49, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 250, "impacto_ambiental": "alto", "recycled_percentage": 20},
-      {"id": 50, "tipo_residuo": "concreto", "quantidade_gerada_kg": 2200, "impacto_ambiental": "baixo", "recycled_percentage": 80},
-      {"id": 51, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 530, "impacto_ambiental": "moderado", "recycled_percentage": 27},
-      {"id": 52, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1100, "impacto_ambiental": "alto", "recycled_percentage": 6},
-      {"id": 53, "tipo_residuo": "plástico", "quantidade_gerada_kg": 800, "impacto_ambiental": "alto", "recycled_percentage": 17},
-      {"id": 54, "tipo_residuo": "papel", "quantidade_gerada_kg": 600, "impacto_ambiental": "moderado", "recycled_percentage": 57},
-      {"id": 55, "tipo_residuo": "vidro", "quantidade_gerada_kg": 200, "impacto_ambiental": "baixo", "recycled_percentage": 80},
-      {"id": 56, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 300, "impacto_ambiental": "alto", "recycled_percentage": 40},
-      {"id": 57, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 560, "impacto_ambiental": "moderado", "recycled_percentage": 32},
-      {"id": 58, "tipo_residuo": "madeira", "quantidade_gerada_kg": 420, "impacto_ambiental": "moderado", "recycled_percentage": 63},
-      {"id": 59, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 980, "impacto_ambiental": "alto", "recycled_percentage": 9},
-      {"id": 60, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1200, "impacto_ambiental": "alto", "recycled_percentage": 25},
-      {"id": 61, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 280, "impacto_ambiental": "baixo", "recycled_percentage": 90},
-      {"id": 62, "tipo_residuo": "concreto", "quantidade_gerada_kg": 2100, "impacto_ambiental": "baixo", "recycled_percentage": 79},
-      {"id": 63, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 570, "impacto_ambiental": "moderado", "recycled_percentage": 26},
-      {"id": 64, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 440, "impacto_ambiental": "alto", "recycled_percentage": 22},
-      {"id": 65, "tipo_residuo": "vidro", "quantidade_gerada_kg": 300, "impacto_ambiental": "baixo", "recycled_percentage": 70},
-      {"id": 66, "tipo_residuo": "papel", "quantidade_gerada_kg": 800, "impacto_ambiental": "moderado", "recycled_percentage": 50},
-      {"id": 67, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1300, "impacto_ambiental": "alto", "recycled_percentage": 10},
-      {"id": 68, "tipo_residuo": "madeira", "quantidade_gerada_kg": 700, "impacto_ambiental": "moderado", "recycled_percentage": 62},
-      {"id": 69, "tipo_residuo": "plástico", "quantidade_gerada_kg": 1100, "impacto_ambiental": "alto", "recycled_percentage": 24},
-      {"id": 70, "tipo_residuo": "concreto", "quantidade_gerada_kg": 2300, "impacto_ambiental": "baixo", "recycled_percentage": 81},
-      {"id": 71, "tipo_residuo": "alumínio", "quantidade_gerada_kg": 210, "impacto_ambiental": "baixo", "recycled_percentage": 88},
-      {"id": 72, "tipo_residuo": "eletrônicos", "quantidade_gerada_kg": 450, "impacto_ambiental": "alto", "recycled_percentage": 30},
-      {"id": 73, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1500, "impacto_ambiental": "alto", "recycled_percentage": 8},
-      {"id": 74, "tipo_residuo": "papelão", "quantidade_gerada_kg": 700, "impacto_ambiental": "moderado", "recycled_percentage": 71},
-      {"id": 75, "tipo_residuo": "têxtil", "quantidade_gerada_kg": 620, "impacto_ambiental": "moderado", "recycled_percentage": 35},
-      {"id": 76, "tipo_residuo": "madeira", "quantidade_gerada_kg": 620, "impacto_ambiental": "moderado", "recycled_percentage": 60},
-      {"id": 77, "tipo_residuo": "orgânico", "quantidade_gerada_kg": 1600, "impacto_ambiental": "alto", "recycled_percentage": 7},
-      {"id": 78, "tipo_residuo": "concreto", "quantidade_gerada_kg": 2000, "impacto_ambiental": "baixo", "recycled_percentage": 80},
-      {"id": 79, "tipo_residuo": "vidro", "quantidade_gerada_kg": 280, "impacto_ambiental": "baixo", "recycled_percentage": 78},
-      {"id": 80, "tipo_residuo": "papel", "quantidade_gerada_kg": 850, "impacto_ambiental": "moderado", "recycled_percentage": 52}
-    ]
-  }
-  module.exports = DadosLixo;
+const fs = require('fs');
+const path = require('path');
+
+exports.getMaiorValor = async () => {
+  const filePath = path.join(__dirname, '../views/dados_lixo.json');
+  const rawData = fs.readFileSync(filePath);
+  const jsonData = JSON.parse(rawData);
+
+   // Encontrar o maior valor e o respectivo ano
+   const maiorRegistro = jsonData.dados_lixo.reduce((anterior, maior) => {
+    return maior.toneladas > anterior.toneladas ? maior : anterior;
+  });
+
+  const maior = maiorRegistro.toneladas;
+  const ano = maiorRegistro.ano;
+  const pib = maiorRegistro.pib;
+
+  // Retornar ambos os valores
+  return { maior, ano, pib };
+};
