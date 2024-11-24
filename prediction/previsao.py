@@ -56,6 +56,7 @@ imputed_X_previsao = pd.DataFrame(imputer.transform(X_previsao))
 imputed_X_previsao.columns = X_previsao.columns
 
 previsao = model.predict(imputed_X_previsao)
+previsao = [int(prev) for prev in previsao]
 print(f"previsao para anos futuros:{previsao}")
 previsao_data["Total Aterros(Ton)"] = previsao
 
