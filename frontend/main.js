@@ -83,8 +83,7 @@ const chartzuda2 = new Chart(ctx2, {
         display: true,
         text: 'Ano'
       }
-
-      }
+      },
     },
     borderColor: 'rgba(130,46,255,1)',
     borderWidth: 2,
