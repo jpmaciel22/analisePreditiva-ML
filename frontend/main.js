@@ -30,13 +30,23 @@ fetchData().then(datapoints => {
   const pib = datapoints.dados_lixo.map(function(index){
     return index.pib;
   })
-  const turistas = datapoints.dados_lixo.map(function(index){
-    return index.turistas;
+  const custo = datapoints.dados_lixo.map(function(index){
+    return index.custo;
   })
   chartzuda2.config.data.labels = ano;
   chartzuda2.config.data.datasets[0].data = quantidade;
-  chartzuda1.config.data.labels = turistas;
-  chartzuda1.config.data.datasets[0].data = pib;
+  chartzuda1.config.data.labels = ano;
+  chartzuda1.config.data.datasets[0].data = custo;
+  const cores = ano.map(valor => {
+    if (valor >= 2025) {
+      return 'rgba(0, 247, 255, 1)'; // verde pra ia
+    } else {
+      return 'rgba(130,46,255,1)'; // roxo pro real
+    }
+  });
+  chartzuda2.config.data.datasets[0].borderColor = cores;
+  chartzuda1.config.data.datasets[0].borderColor = cores;
+  
   chartzuda2.update();
   chartzuda1.update();
 
@@ -62,7 +72,7 @@ const chartzuda2 = new Chart(ctx2, {
   options: {
     scales: {
       y: {
-        min: 100000,
+        min: 750000,
         title:{
           display:true,
           text: 'Toneladas',
@@ -87,22 +97,23 @@ const chartzuda1 = new Chart(ctx, {
   data: {
     labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
     datasets: [{
-      label: 'PIB',
+      label: 'R$',
       data: [12, 19, 13, 5, 2, 3],
     }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true,
+        min:30000000,
+        beginAtZero: false,
         title:{
           display:true,
-          text: 'PIB'},
+          text: 'Custo anual da coleta de toneladas de lixo'},
       },
       x:{ 
         title: {
         display: true,
-        text: 'Turistas ( Em milhões )'
+        text: 'Ano'
       }
     },
   },
