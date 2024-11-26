@@ -103,7 +103,7 @@ const chartzuda1 = new Chart(ctx, {
   options: {
     scales: {
       y: {
-        min:30000000,
+        min:40000000,
         beginAtZero: false,
         title:{
           display:true,

@@ -24,5 +24,5 @@ exports.getMaiorValor = async () => {
   const custo = maiorRegistro.custo;
 
   // Retornar ambos os valores
-  return { maior, ano, custo };
+  return { maior, ano, custo, pib };
 };
