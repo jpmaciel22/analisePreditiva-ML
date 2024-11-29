@@ -32,7 +32,7 @@ app.use(helmet.referrerPolicy({ policy: ["origin", "unsafe-url"] }));
 const csrf = require('csurf');// ajuda na seguranca
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
-app.use(helmet()) // irei comentar isso pois pode dar erro no localhost, porem em servidores normais é bom utilizar
+// app.use(helmet()) // irei comentar isso pois pode dar erro no localhost, porem em servidores normais é bom utilizar
 // para a seguranca do sistema
 app.use(express.urlencoded({extended: true})); // para poder transformar em objeto as requisicoes do body
 // permite o envio de formularios para dentro da nossa aplicacao em forma de requisicao

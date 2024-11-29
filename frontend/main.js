@@ -38,7 +38,7 @@ fetchData().then(datapoints => {
   chartzuda1.config.data.labels = ano;
   chartzuda1.config.data.datasets[0].data = custo;
   const cores = ano.map(valor => {
-    if (valor >= 2025) {
+    if (valor >= 2024) {
       return 'rgba(0, 247, 255, 1)'; // verde pra ia
     } else {
       return 'rgba(130,46,255,1)'; // roxo pro real
